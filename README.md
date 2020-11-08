@@ -31,11 +31,8 @@ the function returns an output that the condition specifies. In this case the fu
 - val min3 = fn : int * int * int -> int
 val it = 0 : int
 
-(4)  fun Cycle1(x) =
-- if null x 
-- then x
-- else tl (x) @ [ hd (x) ];
-- cycle1 [1, 2, 3, 4, 5, 6, 7];
+(4)  fun Cycle1(x) = if null x  then x else tl (x) @ [ hd (x) ];
+-      cycle1 [1, 2, 3, 4, 5, 6, 7];
 The function Cycle1 takes an input list (x) and returns the input list as the outout but with the first element of
 the input list move to the end of the output list. if the input list is null (empty), it returns a null list. If 
 the input list is not null, the tail (all elements apart from the first element) of the input list is retrieved 
@@ -46,31 +43,52 @@ return ouput is:
 - val cycle1 = fn : 'a list -> 'a list
 val it = [2,3,4,5,6,7,1] : int list
 
-(5)  fun sqsum x =
-- if x = 0 then 0
-- else (x * x) + sqsum (x - 1);
-- sqsum 4;
+(5)  fun sqsum x = if x = 0 then 0 else (x * x) + sqsum (x - 1);
+-      sqsum 4;
 The function sqsum takes a positive input integer (x) and returns the sum of the squares of all the integers zero (0)
 through 'x' using if, and else in a series of conditions. When a condition is met, the function returns an 
 output that the condition specifies. In this case the function takes an input value of 4 and the return output is: 
 - val sqsum = fn : int -> int
 val it = 30 : int
 
-(6)  fun member (e, [ ])= false | member (e, x :: xs) = if (e = x)
-- then true
-- else member(e, xs);
-- member (1, [ ]);
-- member (8, [7, 8]);
+(6)  fun member (e, [ ])= false | member (e, x :: xs) = if (e = x) then true else member(e, xs);
+-      member (1, [ ]);
+-      member (8, [7, 8]);
 The function member takes an input tuple of two elements of which the second is a list and returns either true or false 
 when the first element in the tuple is found in the second element (list) in the tuple using if, and else condition 
 statements. In this case the function takes input values of (1, [ ]) and (8, [7, 8]). The return output are: 
-- val member = fn : ''a * ''a list -> bool
+-  val member = fn : ''a * ''a list -> bool
 val it = false : bool
 val it = true : bool
 
-(7) fun less (e, [ ]) = [ ] | less (e, x :: xs) = 
-- if x < e 
-- then x :: less (e, xs) 
-- else less (e, xs);
-- less(10, [3, 4, 5, 0, 7, 8, 50]);
-The function 
+(7) fun less (e, [ ]) = [ ] | less (e, x :: xs) =  if x < e  then x :: less (e, xs)  else less (e, xs);
+-       less(10, [3, 4, 5, 0, 7, 8, 50]);
+The function less takes an input tuple of two elements of which the second is a list and returns an 
+output list when the first element in the tuple is less than any of the elements in the second element of the tuple. In 
+this case the function takes input value of (10, [3, 4, 5, 0, 7, 8, 50]) and the return output is:
+- val less = fn : int * int list -> int list
+val it = [3,4,5,0,7,8] : int list
+
+(8) fun member (e, [ ]) = false | member (e, x :: xs) = if (e = x) then true else member(e, xs);
+-    fun union ([  ], s2) = s2 | union (s :: s1, s2) = if member (s, s2) then union (s1, s2) else s :: union (s1, s2);
+-      union([3,2,5], [2,3,4]);
+The function union (S1, S2) that returns the union of sets S1 and S2. Sets are implemented as unordered lists of elements, 
+without repetitions. The function member is used to check whether an element belongs to a set or not. In 
+this case the function takes input value of ([3,2,5], [2,3,4]) and the return output is:
+-  val member = fn : ''a * ''a list -> bool
+val union = fn : ''a list * ''a list -> ''a list
+val it = [5,2,3,4] : int list
+
+(9) fun member (e, [ ]) = false | member (e, x :: xs) = if (e = x) then true else member(e, xs);
+
+-   fun intersection ([ ], [ ]) = [ ] | intersection (x, [ ]) = [ ] | intersection ([ ], x) = [ ] 
+-   | intersection ((x :: xs), (y)) = if member (x, xs) then intersection (xs, y) 
+-   else if member (x, y) then x :: intersection (xs, y) else intersection (xs, y);
+
+-       intersection([1, 2, 3, 4, 5], [4, 5, 6, 7, 8]);
+The function intersection takes an input tuple of two elements of which they are both a list and returns the
+intersection of the two elements of the input tuple as a single list. In this case the function takes input 
+value of ([1, 2, 3, 4, 5], [4, 5, 6, 7, 8]) and the return output is: 
+- val member = fn : ''a * ''a list -> bool
+val intersection = fn : ''a list * ''a list -> ''a list
+val it = [4,5] : int list
