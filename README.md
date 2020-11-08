@@ -5,7 +5,7 @@
 - Turn in Date:        11/08/2020
 - Homework 3 Solutions
 
-- (1)  fun Cuber (x: real): real = x * x * x;
+ (1)  fun Cuber (x: real): real = x * x * x;
 -     Cuber 3.0;
 The function Cuber takes an input number (x) and converts it to a real (float) number.
 ": real " which comes after "(x: real)" makes show that the output of the function is a real (float) number.
@@ -14,7 +14,7 @@ function takes an input value of 3.0 and the return output is:
 - val Cuber = fn : real -> real
 val it = 27.0 : real
 
-- (2)  fun fourth (x) = hd (tl (tl (tl x)));
+ (2)  fun fourth (x) = hd (tl (tl (tl x)));
 - fourth [1, 2, 34, 5, 6];
 The function fourth takes an input list (x) and finds the fourth (4) number in the input list as the out put
 and returns it. Using key words hd (head) and tl (tail) in ML to manipulate the list, the fourth value of the
@@ -22,7 +22,7 @@ list is retrieved. In this case the function takes an input list of [1, 2, 34, 5
 - val fourth = fn : 'a list -> 'a
 val it = 5 : int
 
-- (3) fun min3 (x, y, z) =
+(3) fun min3 (x, y, z) =
 - if x < y andalso x < z
 - then x
 - else if y < x andalso y < z
@@ -36,7 +36,7 @@ the function returns an output that the condition specifies. In this case the fu
 - val min3 = fn : int * int * int -> int
 val it = 0 : int
 
-- (4)  fun Cycle1(x) =
+(4)  fun Cycle1(x) =
 - if null x 
 - then x
 - else tl (x) @ [ hd (x) ];
@@ -51,7 +51,7 @@ return ouput is:
 - val cycle1 = fn : 'a list -> 'a list
 val it = [2,3,4,5,6,7,1] : int list
 
-- (5)  fun sqsum x =
+(5)  fun sqsum x =
 - if x = 0 then 0
 - else (x * x) + sqsum (x - 1);
 - sqsum 4;
@@ -61,7 +61,7 @@ output that the condition specifies. In this case the function takes an input va
 - val sqsum = fn : int -> int
 val it = 30 : int
 
-- (6)  fun member (e, [ ])= false | member (e, x :: xs) = if (e = x)
+(6)  fun member (e, [ ])= false | member (e, x :: xs) = if (e = x)
 - then true
 - else member(e, xs);
 - member (1, [ ]);
@@ -73,7 +73,7 @@ statements. In this case the function takes input values of (1, [ ]) and (8, [7,
 val it = false : bool
 val it = true : bool
 
-- (7) fun less (e, [ ]) = [ ] | less (e, x :: xs) = 
+(7) fun less (e, [ ]) = [ ] | less (e, x :: xs) = 
 - if x < e 
 - then x :: less (e, xs) 
 - else less (e, xs);
