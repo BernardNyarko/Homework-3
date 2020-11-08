@@ -1,9 +1,9 @@
 # Homework-3         Ml functions and Patterns
-Student:             Bernard Nyarko;   ID: P22188665
-Lecturer:            Professor(Associate) Ahmed Abdelmoamen Ahmed
-Course:              Fundamentals and Concepts of Programming Languages
-Turn in Date:        11/08/2020
-Homework 3 Solutions
+-Student:             Bernard Nyarko;   ID: P22188665
+-Lecturer:            Professor(Associate) Ahmed Abdelmoamen Ahmed
+-Course:              Fundamentals and Concepts of Programming Languages
+-Turn in Date:        11/08/2020
+-Homework 3 Solutions
 
 (1) fun Cuber (x: real): real = x * x * x;
      Cuber 3.0;
