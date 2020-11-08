@@ -5,8 +5,8 @@
 - Turn in Date:        11/08/2020
 - Homework 3 Solutions
 
-(1) - fun Cuber (x: real): real = x * x * x;
-    - Cuber 3.0;
+- (1)  fun Cuber (x: real): real = x * x * x;
+-     Cuber 3.0;
 The function Cuber takes an input number (x) and converts it to a real (float) number.
 ": real " which comes after "(x: real)" makes show that the output of the function is a real (float) number.
 The function works by multiplying the input number three (3) times and returns the output. In this case the 
@@ -14,21 +14,21 @@ function takes an input value of 3.0 and the return output is:
 - val Cuber = fn : real -> real
 val it = 27.0 : real
 
-(2) - fun fourth (x) = hd (tl (tl (tl x)));
-     - fourth [1, 2, 34, 5, 6];
+- (2)  fun fourth (x) = hd (tl (tl (tl x)));
+-fourth [1, 2, 34, 5, 6];
 The function fourth takes an input list (x) and finds the fourth (4) number in the input list as the out put
 and returns it. Using key words hd (head) and tl (tail) in ML to manipulate the list, the fourth value of the
 list is retrieved. In this case the function takes an input list of [1, 2, 34, 5, 6]; and the return output is:
 - val fourth = fn : 'a list -> 'a
 val it = 5 : int
 
-(3) - fun min3 (x, y, z) =
-     - if x < y andalso x < z
-     - then x
-     - else if y < x andalso y < z
-     - then y
-     - else z;
-     - min3 (5,9,0);
+- (3) - fun min3 (x, y, z) =
+- if x < y andalso x < z
+- then x
+- else if y < x andalso y < z
+- then y
+- else z;
+- min3 (5,9,0);
 The function min3 takes an input of three integers in a tuple and finds the minimum of the three integers 
 using if, else if, and else key words in ML to provide a series of condition statements. When a condition is met, 
 the function returns an output that the condition specifies. In this case the function takes an input value of 
@@ -36,8 +36,8 @@ the function returns an output that the condition specifies. In this case the fu
 - val min3 = fn : int * int * int -> int
 val it = 0 : int
 
-(4) - fun Cycle1(x) =
-     - if null x 
+- (4)  fun Cycle1(x) =
+- if null x 
      - then x
      - else tl (x) @ [ hd (x) ];
      - cycle1 [1, 2, 3, 4, 5, 6, 7];
